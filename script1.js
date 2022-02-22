@@ -22,7 +22,7 @@ class Enemy {
         this.gameHeight = canvas.height;
         this.markedForDeletion = false;
         this.frameX;
-        this.maxFrame = 7; //tí phải đổi
+       
         // this.fps = 20;
         this.frameInterval = 100;// có thể chia fps
         this.frameTimer = 0;
@@ -36,6 +36,7 @@ class Enemy {
         if (this.frameTimer > this.frameInterval){
             if (this.frameX < this.maxFrame){
                 this.frameX++
+                this.frameTimer = 0;
             }
             else {
                 this.frameX = 0;
@@ -53,6 +54,7 @@ class Enemy {
 class RunningDino extends Enemy {
     constructor(){
         super();
+        this.maxFrame = 7; //tí phải đổi
         this.spriteWidth = 94.5;
         this.spriteHeight = 72;
         this.x = this.gameWidth;
